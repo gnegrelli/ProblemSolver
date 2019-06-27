@@ -54,6 +54,9 @@ def popup():
     label = tk.Label(popup, text='Solving Problems')
     label.pack()
 
+    btn1 = tk.Button(popup, text='I still have problems :(', command=lambda: popup.destroy())
+    btn1.pack()
+
 
 app = Solver()
 app.geometry('275x80')
