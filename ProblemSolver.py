@@ -66,10 +66,10 @@ def popup():
     progress_bar = ttk.Progressbar(frame1, variable=value, maximum=30)
     progress_bar.pack(fill='both')
 
-    btn1 = tk.Button(frame2, text='I still have problems :(', command=lambda: popup.destroy())
+    btn1 = tk.Button(frame2, text='I still have problems :(', command=lambda: popup.destroy(), state='disabled')
     btn1.pack(side='left', pady=10, padx=10)
 
-    btn2 = tk.Button(frame2, text='Yay!', command=lambda: app.quit())
+    btn2 = tk.Button(frame2, text='Yay!', command=lambda: app.quit(), state='disabled')
     btn2.pack(side='left', pady=10, padx=10)
 
 
