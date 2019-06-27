@@ -41,24 +41,30 @@ class StartPage(tk.Frame):
         label = tk.Label(self, text='Start Page', font=Large_font)
         label.pack(pady=10, padx=10)
 
-        button = tk.Button(self, text='Solve Problems', command=lambda: popup(controller))
+        button = tk.Button(self, text='Solve Problems', command=lambda: popup())
         button.pack()
 
 
-def popup(controller):
+def popup():
 
     popup = tk.Tk()
 
+    frame1 = tk.Frame(popup)
+    frame1.pack()
+
+    frame2 = tk.Frame(popup)
+    frame2.pack(side='bottom')
+
     popup.title('Solving Problems')
 
-    label = tk.Label(popup, text='Solving Problems')
-    label.pack()
+    label = tk.Label(frame1, text='Solving Problems')
+    label.pack(side='top', pady=10, padx=10)
 
-    btn1 = tk.Button(popup, text='I still have problems :(', command=lambda: popup.destroy())
-    btn1.pack()
+    btn1 = tk.Button(frame2, text='I still have problems :(', command=lambda: popup.destroy())
+    btn1.pack(side='left', pady=10, padx=10)
 
-    btn2 = tk.Button(popup, text='Yay!', command=lambda: app.quit())
-    btn2.pack()
+    btn2 = tk.Button(frame2, text='Yay!', command=lambda: app.quit())
+    btn2.pack(side='left', pady=10, padx=10)
 
 
 app = Solver()
