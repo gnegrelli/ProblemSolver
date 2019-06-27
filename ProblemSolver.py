@@ -46,7 +46,8 @@ class StartPage(tk.Frame):
 
 
 app = Solver()
-app.geometry('200x80')
+app.geometry('275x80')
+app.title('Problem Solver 1.0')
 app.mainloop()
 
 
