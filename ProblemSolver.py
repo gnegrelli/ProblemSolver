@@ -41,7 +41,7 @@ class StartPage(tk.Frame):
         label = tk.Label(self, text='Start Page', font=Large_font)
         label.pack(pady=10, padx=10)
 
-        button = tk.Button(self, text='Solve Problems')
+        button = tk.Button(self, text='Solve Problems', command=controller.destroy)
         button.pack()
 
 
