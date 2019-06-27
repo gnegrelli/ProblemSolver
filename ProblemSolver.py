@@ -46,6 +46,7 @@ class StartPage(tk.Frame):
 
 
 app = Solver()
+app.geometry('200x80')
 app.mainloop()
 
 
