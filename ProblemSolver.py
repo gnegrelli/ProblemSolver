@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 Large_font = ('Verdana', 12)
 
@@ -50,7 +51,7 @@ def popup():
     popup = tk.Tk()
 
     frame1 = tk.Frame(popup)
-    frame1.pack()
+    frame1.pack(fill='both', padx=10)
 
     frame2 = tk.Frame(popup)
     frame2.pack(side='bottom')
@@ -59,6 +60,11 @@ def popup():
 
     label = tk.Label(frame1, text='Solving Problems')
     label.pack(side='top', pady=10, padx=10)
+
+    value = tk.DoubleVar()
+
+    progress_bar = ttk.Progressbar(frame1, variable=value, maximum=30)
+    progress_bar.pack(fill='both')
 
     btn1 = tk.Button(frame2, text='I still have problems :(', command=lambda: popup.destroy())
     btn1.pack(side='left', pady=10, padx=10)
