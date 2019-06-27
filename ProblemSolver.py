@@ -48,6 +48,7 @@ class StartPage(tk.Frame):
 app = Solver()
 app.geometry('275x80')
 app.title('Problem Solver 1.0')
+app.resizable(False, False)
 app.mainloop()
 
 
