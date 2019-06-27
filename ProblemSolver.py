@@ -71,12 +71,23 @@ def popup():
     btn2 = tk.Button(frame2, text='Yay!', command=lambda: app.quit(), state='disabled')
     btn2.pack(side='left', pady=10, padx=10)
 
-    popup.after(1000, lambda: func(progress_bar))
+    popup.after(1000, lambda: func(popup, progress_bar, label, btn1, btn2))
 
 
-def func(pb):
+def func(pop, pb, lbl, b1, b2):
 
     pb['value'] += 10
+    pop.update()
+
+    if pb['value'] <= pb['maximum']:
+        if pb['value'] >= 0.7*pb['maximum']:
+            lbl['text'] = 'Almost there...'
+        pop.after(1000, func(pop, pb, lbl, b1, b2))
+    else:
+        b1['state'] = 'normal'
+        b2['state'] = 'normal'
+        lbl['text'] = 'Done!'
+
 
 
 app = Solver()
