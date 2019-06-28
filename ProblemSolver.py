@@ -40,7 +40,7 @@ class StartPage(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
-        label = tk.Label(self, text='Start Page', font=Large_font)
+        label = tk.Label(self, text='The solution to all your problems is one click away.\nJust click on the button bellow to live a stress-free life.', font=Large_font)
         label.pack(pady=10, padx=10)
 
         button = tk.Button(self, text='Solve Problems', command=lambda: popup())
@@ -91,7 +91,7 @@ def func(pop, pb, lbl, b1, b2):
 
 
 app = Solver()
-app.geometry('275x80')
+app.geometry('500x100')
 app.title('Problem Solver 1.0')
 app.resizable(False, False)
 app.mainloop()
