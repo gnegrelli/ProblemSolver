@@ -82,12 +82,11 @@ def func(pop, pb, lbl, b1, b2):
     if pb['value'] <= pb['maximum']:
         if pb['value'] >= 0.7*pb['maximum']:
             lbl['text'] = 'Almost there...'
-        pop.after(1000, func(pop, pb, lbl, b1, b2))
+        pop.after(1000, lambda: func(pop, pb, lbl, b1, b2))
     else:
         b1['state'] = 'normal'
         b2['state'] = 'normal'
         lbl['text'] = 'Done!'
-
 
 
 app = Solver()
