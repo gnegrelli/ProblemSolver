@@ -62,7 +62,7 @@ def popup():
     label = tk.Label(frame1, text='Solving Problems')
     label.pack(side='top', pady=10, padx=10)
 
-    progress_bar = ttk.Progressbar(frame1, value=0, maximum=30)
+    progress_bar = ttk.Progressbar(frame1, value=0, maximum=100)
     progress_bar.pack(fill='both')
 
     btn1 = tk.Button(frame2, text='I still have problems :(', command=lambda: popup.destroy(), state='disabled')
@@ -71,18 +71,19 @@ def popup():
     btn2 = tk.Button(frame2, text='Yay!', command=lambda: app.quit(), state='disabled')
     btn2.pack(side='left', pady=10, padx=10)
 
-    popup.after(1000, lambda: func(popup, progress_bar, label, btn1, btn2))
+    popup.after(200, lambda: func(popup, progress_bar, label, btn1, btn2))
 
 
 def func(pop, pb, lbl, b1, b2):
 
-    pb['value'] += 10
+    pb['value'] += 1
     pop.update()
 
     if pb['value'] <= pb['maximum']:
-        if pb['value'] >= 0.7*pb['maximum']:
+        if pb['value'] >= 0.75*pb['maximum']:
             lbl['text'] = 'Almost there...'
-        pop.after(1000, lambda: func(pop, pb, lbl, b1, b2))
+            pop.after(1000, lambda: func(pop, pb, lbl, b1, b2))
+        pop.after(200, lambda: func(pop, pb, lbl, b1, b2))
     else:
         b1['state'] = 'normal'
         b2['state'] = 'normal'
