@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-import time
 
 Large_font = ('Verdana', 12)
 
@@ -95,6 +94,3 @@ app.geometry('500x100')
 app.title('Problem Solver 1.0')
 app.resizable(False, False)
 app.mainloop()
-
-
-
