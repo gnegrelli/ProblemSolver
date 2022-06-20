@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+
 Large_font = ('Verdana', 12)
 
 
@@ -88,9 +89,10 @@ def func(pop, pb, lbl, b1, b2):
         b2['state'] = 'normal'
         lbl['text'] = 'Done!'
 
+if __name__ == '__main__':
+    app = Solver()
+    app.geometry('500x100')
+    app.title('Problem Solver 1.0')
+    app.resizable(False, False)
+    app.mainloop()
 
-app = Solver()
-app.geometry('500x100')
-app.title('Problem Solver 1.0')
-app.resizable(False, False)
-app.mainloop()
